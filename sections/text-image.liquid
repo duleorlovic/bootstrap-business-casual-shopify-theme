@@ -1,0 +1,76 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      {% if section.settings.image %}
+        {% assign img_src = section.settings.image | img_url: "large" %}
+      {% else %}
+        {% assign img_src = "intro.jpg" | asset_url %}
+      {% endif %}
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ img_src }}" alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">{{ section.settings.header1 }}</span>
+          <span class="section-heading-lower">{{ section.settings.header2 }}</span>
+        </h2>
+        <p class="mb-3">{{ section.settings.body }}</p>
+        {% if section.settings.button-url %}
+          <div class="intro-button mx-auto">
+            <a class="btn btn-primary btn-xl" href="{{ section.settings.button-url }}">
+              {% if section.settings.button-text %}
+                {{ section.settings.button-text }}
+              {% else %}
+                {{ section.settings.button-url }}
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Text and image",
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "header1",
+        "type": "text",
+        "label": "Header 1",
+        "default": "Fresh Coffee"
+      },
+      {
+        "id": "header2",
+        "type": "text",
+        "label": "Header 2",
+        "default": "Worth Drinking"
+      },
+      {
+        "id": "body",
+        "type": "richtext",
+        "label": "Body",
+        "default": "<p>Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!</p>"
+      },
+      {
+        "id": "button-url",
+        "type": "url",
+        "label": "Button url"
+      },
+      {
+        "id": "button-text",
+        "type": "text",
+        "label": "Button text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text and image",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

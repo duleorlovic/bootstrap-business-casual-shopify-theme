@@ -1,0 +1,52 @@
+<section class="page-section cta clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">{{ section.settings.header1 }}</span>
+            <span class="section-heading-lower">{{ section.settings.header2 }}</span>
+          </h2>
+          <p class="mb-0">{{ section.settings.body }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "CTA text",
+    "settings": [
+      {
+        "id": "header1",
+        "type": "text",
+        "label": "Header 1",
+        "default": "Our Promise"
+      },
+      {
+        "id": "header2",
+        "type": "text",
+        "label": "Header 2",
+        "default": "To You"
+      },
+      {
+        "id": "body",
+        "type": "richtext",
+        "label": "Body",
+        "default": "<p>When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>"
+      },
+      {
+        "id": "button-url",
+        "type": "url",
+        "label": "Button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "CTA text",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

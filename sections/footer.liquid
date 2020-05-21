@@ -1,0 +1,34 @@
+<footer class="footer text-faded text-center py-5">
+  <div class="container">
+    <p class="m-0 small">
+      {{ section.settings.text | remove: "<p>" | remove: "</p>" }}
+      {% if section.settings.append-shopname %} {{ shop.name | link_to: "/" }}{% endif %}
+      {% if section.settings.append-year %} {{ "now" | date: "%Y" }}{% endif %}
+    </p>
+  </div>
+</footer>
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "id": "text",
+        "type": "richtext",
+        "label": "Text",
+        "default": "<p>Copyright &copy;</p>"
+      },
+      {
+        "id": "append-shopname",
+        "type": "checkbox",
+        "label": "Append shop link",
+        "default": true
+      },
+      {
+        "id": "append-year",
+        "type": "checkbox",
+        "label": "Append year",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

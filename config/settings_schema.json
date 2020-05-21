@@ -1,0 +1,111 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Free Boostrap Business",
+    "theme_author": "blackrock & duleorlovic",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https:\/\/github.com\/duleorlovic\/free-bootstrap-business-casual-shopify-theme",
+    "theme_support_url": "https:\/\/github.com\/duleorlovic\/free-bootstrap-business-casual-shopify-theme"
+  },
+  {
+    "name": {
+      "de": "Background Image",
+      "en": "Background Image"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background-image",
+        "label": {
+          "de": "Background Image",
+          "en": "Background Image"
+        }
+      }
+    ]
+  },
+  {
+    "name": {
+      "de": "Farben",
+      "en": "Colors"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "de": "Text",
+          "en": "Text"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_active_text",
+        "label": {
+          "de": "Active-Text",
+          "en": "Active text"
+        },
+        "default": "#e6a756"
+      },
+      {
+        "type": "color",
+        "id": "color_sale_text",
+        "label": {
+          "de": "Verkaufspreis",
+          "en": "Sale price"
+        },
+        "default": "#fa4545"
+      },
+      {
+        "type": "header",
+        "content": {
+          "de": "Text auf Fotos",
+          "en": "Image overlays"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay",
+        "label": {
+          "de": "Hintergrund",
+          "en": "Background"
+        },
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "range",
+        "id": "image_overlay_opacity",
+        "label": {
+          "de": "Opazität",
+          "en": "Opacity"
+        },
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": {
+          "de": "%",
+          "en": "%"
+        },
+        "default": 85
+      }
+    ]
+  },
+  {
+    "name": {
+      "de": "Favicon",
+      "en": "Favicon"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": {
+          "de": "Favicon-Foto",
+          "en": "Favicon image"
+        },
+        "info": {
+          "de": "Wird in der Größe 32 x 32 px angezeigt",
+          "en": "Will be scaled down to 32 x 32px"
+        }
+      }
+    ]
+  }
+]

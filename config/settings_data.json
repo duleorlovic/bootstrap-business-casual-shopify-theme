@@ -1,0 +1,67 @@
+{
+  "current": {
+    "background-image": "",
+    "color_active_text": "#e6a756",
+    "color_sale_text": "#fa4545",
+    "color_image_overlay": "#ffffff",
+    "image_overlay_opacity": 85,
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "active-text": "A Free Bootstrap 4 Business Theme",
+          "main-text": "Business Casual",
+          "main_linklist": "main-menu",
+          "menu-uppercased": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "text": "<p>Copyright &copy;<\/p>",
+          "append-shopname": true,
+          "append-year": true
+        }
+      },
+      "1590061494938": {
+        "type": "text-image",
+        "settings": {
+          "image": "",
+          "header1": "Fresh Coffee",
+          "header2": "Worth Drinking",
+          "body": "<p>Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!<\/p>",
+          "button-url": "",
+          "button-text": ""
+        }
+      },
+      "1590061502055": {
+        "type": "cta-text",
+        "settings": {
+          "header1": "Our Promise",
+          "header2": "To You",
+          "body": "<p>When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!<\/p>",
+          "button-url": ""
+        }
+      }
+    },
+    "content_for_index": [
+      "1590061494938",
+      "1590061502055"
+    ]
+  }
+}
