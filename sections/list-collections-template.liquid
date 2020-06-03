@@ -1,0 +1,95 @@
+{% if section.settings.display_type == 'all' %}
+  {% assign collections_string = "" %}
+  {% for collection in collections %}
+    {% assign collections_string = collections_string | append:
+    collection.handle | append: ";" %}
+  {% endfor %}
+  {% assign collection_handles = collections_string | remove_last: ";" | split: ";" %}
+{% else %}
+  {% assign collections_string = "" %}
+  {% for block in section.blocks %}
+    {% if block.settings.collection == empty %}
+      {% continue %}
+    {% endif %}
+    {% assign collections_string = collections_string | append:
+    collections[block.settings.collection].handle | append: ";" %}
+  {% endfor %}
+  {% assign collection_handles = collections_string | remove_last: ";" | split: ";" %}
+{% endif %}
+
+{% for collection_handle in collection_handles %}
+  {% assign collection = collections[collection_handle] %}
+  <section class="page-section">
+    <div class="container">
+      <div class="product-item">
+        <div class="product-item-title d-flex">
+          {% comment %}
+            mr-auto
+          {% endcomment %}
+          <div class="bg-faded p-5 d-flex ml-auto rounded">
+            <h2 class="section-heading mb-0">
+              {% assign title_array = collection.title | split: settings.split-char %}
+              {% if title_array.size == 1 %}
+                <span class="section-heading-lower">{{ title_array.first }}</span>
+              {% else %}
+                <span class="section-heading-upper">{{ title_array.last }}</span>
+                <span class="section-heading-lower">{{ title_array.first }}</span>
+              {% endif %}
+            </h2>
+          </div>
+        </div>
+        <a href="{{ collection.url }}">
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+               src="{{ collection | img_url: "900x700" }}"
+               alt="">
+        </a>
+        <div class="product-item-description d-flex mr-auto">
+          <div class="bg-faded p-5 rounded">
+            <p class="mb-0">{{ collection.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Collections list page",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "All of your collections are listed by default. To customize your list, choose 'Selected' and add collections."
+    },
+    {
+      "type": "radio",
+      "id": "display_type",
+      "label": "Select collections to show",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All"
+        },
+        {
+          "value": "selected",
+          "label": "Selected"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

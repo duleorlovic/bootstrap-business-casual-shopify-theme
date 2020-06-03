@@ -1,10 +1,20 @@
+// override default image with shopify settings
 {% if settings.background-image %}
   {% assign background_image = settings.background-image | img_url: "large" %}
 {% else %}
   {% assign background_image = "bg.jpg" | asset_url %}
 {% endif %}
 body {
-  // override default image with shopify settings
-  background-image: linear-gradient(rgba(47,23,15,.65),rgba(47,23,15,.65)),url({{ background_image }})
+  background-image: linear-gradient(rgba(47,23,15,.65),rgba(47,23,15,.65)),url({{ background_image }});
 }
 
+// https://github.com/BlackrockDigital/startbootstrap-business-casual/issues/52
+.cta-inner:before {
+  z-index: -1;
+}
+
+.product-single {
+  right: 10px;
+  z-index: 1;
+  top: 200px;
+}

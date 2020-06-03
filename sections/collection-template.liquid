@@ -1,0 +1,34 @@
+{% for product in collection.products %}
+  <section class="page-section">
+    <div class="container">
+      <div class="product-item">
+        <div class="product-item-title d-flex">
+          {% comment %}
+            mr-auto
+          {% endcomment %}
+          <div class="bg-faded p-5 d-flex ml-auto rounded">
+            <h2 class="section-heading mb-0">
+              {% assign title_array = product.title | split: settings.split-char %}
+              {% if title_array.size == 1 %}
+                <span class="section-heading-lower">{{ title_array.first }}</span>
+              {% else %}
+                <span class="section-heading-upper">{{ title_array.last }}</span>
+                <span class="section-heading-lower">{{ title_array.first }}</span>
+              {% endif %}
+            </h2>
+          </div>
+        </div>
+        <a href="{{ product.url }}">
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+               src="{{ product | img_url: "900x700" }}"
+               alt="">
+        </a>
+        <div class="product-item-description d-flex mr-auto">
+          <div class="bg-faded p-5 rounded">
+            <p class="mb-0">{{ product.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}

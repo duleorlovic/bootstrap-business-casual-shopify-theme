@@ -25,6 +25,24 @@
   },
   {
     "name": {
+      "de": "Split character",
+      "en": "Split character"
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "split-char",
+        "label": {
+          "de": "Split char",
+          "en": "Split char"
+        },
+        "info": "Use this character (default is |) in product, page, collection title to split title in two rows",
+        "default": "|"
+      }
+    ]
+  },
+  {
+    "name": {
       "de": "Farben",
       "en": "Colors"
     },

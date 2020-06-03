@@ -1,0 +1,79 @@
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          {% if cart.item_count == 0 %}
+            <h2 class="section-heading mb-5">
+              <span class="section-heading-upper">
+                Your cart is empty
+              </span>
+              <span class="section-heading-lower">
+                <a href="{{ routes.all_products_collection_url }}">
+                  Continue shopping
+                </a>
+              </span>
+            </h2>
+          {% else %}
+            <h2 class="section-heading mb-5">
+              <span class="section-heading-upper">
+                <a href="{{ routes.all_products_collection_url }}">
+                  Continue shopping, or
+                </a>
+              </span>
+              <span class="section-heading-lower">proceed to checkout</span>
+            </h2>
+            <form action="{{ routes.cart_url }}" method="post" novalidate>
+              <ul class="list-unstyled mb-5 text-left mx-auto">
+                {%- for item in cart.items -%}
+                <li class="list-unstyled-item pb-1 mb-1 d-flex border-warning
+                {% unless forloop.last %} border-bottom {% endunless %}">
+                  <img class="cart__image{% if item.image == null %} hide{% endif %}" src="{{ item | img_url: 'x100' }}" alt="{{ item.image.alt | escape }}" data-cart-item-image>
+                  <div class="pl-1">
+                    <a href="{{ item.url }}">
+                      {{ item.title }}
+                    </a>
+                    <br>
+                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" class="text-danger">Remove</a>
+                  </div>
+                  <span class="ml-auto">
+                    {{ item.quantity }} x
+                    {{ item.price | money }} =
+                    {{ item.final_line_price | money }}
+                  </span>
+                </li>
+              {% endfor %}
+              </ul>
+              <div class="d-flex">
+                <div class="col d-flex flex-column">
+                  <label for="note">Special instructions</label>
+                  <textarea name="note" id="note">{{ cart.note}}</textarea>
+                </div>
+                <div class="col d-flex flex-column">
+                  Total: {{ cart.total_price | money }}
+                  <button type="submit" name="checkout" class="btn btn-primary
+                  btn-large">Checkout</button>
+                  <i>Taxes and shipping calculated at checkout</i>
+                </div>
+              </div>
+            </form>
+          {% endif %}
+          <p class="address mb-5">
+            <em>
+              <strong>1116 Orchard Street</strong>
+              <br>
+              Golden Valley, Minnesota
+            </em>
+          </p>
+          <p class="mb-0">
+            <small>
+              <em>Call Anytime</em>
+            </small>
+            <br>
+            (317) 585-8468
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
